@@ -12,7 +12,7 @@ const ProductScreen = ({ match }) => {
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id));
-  }, [dispatch, match, listProductDetails]);
+  }, [dispatch, match]);
 
   const productDetails = useSelector((state) => state.productDetailsReducer);
   const { loading, error, product } = productDetails;
