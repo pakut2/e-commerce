@@ -6,7 +6,6 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import { register } from "../actions/userActions";
-import { userRegisterReducer } from "../reducers/userReducers";
 
 const RegisterScreen = ({ location, history }) => {
   const [name, setName] = useState("");
