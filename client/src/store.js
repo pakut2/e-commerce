@@ -20,12 +20,12 @@ const paymentMethodFromStorage = localStorage.getItem("paymentMethod")
   : null;
 
 const initialState = {
-  cartReducer: {
+  cart: {
     cartItems: cartItemsFromStorage,
     shippingAddress: shippingAddressFromStorage,
     paymentMethod: paymentMethodFromStorage,
   },
-  userLoginReducer: { userInfo: userInfoFromStorage },
+  userLogin: { userInfo: userInfoFromStorage },
 };
 
 const middleware = [thunk];

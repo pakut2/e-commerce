@@ -20,7 +20,7 @@ const ProductScreen = ({ match, history }) => {
 
   const dispatch = useDispatch();
 
-  const productDetails = useSelector((state) => state.productDetailsReducer);
+  const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
   useEffect(() => {

@@ -104,7 +104,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
     });
 
     const {
-      userLoginReducer: { userInfo },
+      userLogin: { userInfo },
     } = getState();
 
     const config = {
@@ -138,7 +138,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     });
 
     const {
-      userLoginReducer: { userInfo },
+      userLogin: { userInfo },
     } = getState();
 
     const config = {

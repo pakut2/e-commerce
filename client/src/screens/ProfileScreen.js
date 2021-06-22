@@ -15,10 +15,10 @@ const ProfileScreen = ({ history }) => {
 
   const dispatch = useDispatch();
 
-  const userDetails = useSelector((state) => state.userDetailsReducer);
+  const userDetails = useSelector((state) => state.userDetails);
   const { loading, error, user } = userDetails;
 
-  const userLogin = useSelector((state) => state.userLoginReducer);
+  const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
   const userUpdateProfile = useSelector(
