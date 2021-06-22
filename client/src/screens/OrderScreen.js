@@ -47,15 +47,15 @@ const OrderScreen = ({ match, history }) => {
       script.type = "text/javascript";
       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
       script.async = true;
-      script.onLoad = () => {
+      script.onload = () => {
         setSdkReady(true);
       };
       document.body.appendChild(script);
     };
 
-    if (!order || order._id !== orderId || successPay) {
-      dispatch(getOrderDetails(orderId));
+    if (!order || successPay || order._id !== orderId) {
       dispatch({ type: ORDER_PAY_RESET });
+      dispatch(getOrderDetails(orderId));
     } else if (!order.isPaid) {
       if (!window.paypal) {
         addPayPalScript();
@@ -63,7 +63,7 @@ const OrderScreen = ({ match, history }) => {
         setSdkReady(true);
       }
     }
-  }, [dispatch, orderId, successPay, order]);
+  }, [dispatch, orderId, successPay, order, history, userInfo, setSdkReady]);
 
   const successPaymentHandler = (paymentResult) => {
     dispatch(payOrder(orderId, paymentResult));
